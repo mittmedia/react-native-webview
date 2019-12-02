@@ -662,6 +662,7 @@ public class RNCWebViewManager extends SimpleViewManager<WebView> {
           if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             mVideoView.setSystemUiVisibility(FULLSCREEN_SYSTEM_UI_VISIBILITY);
             mReactContext.getCurrentActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+            mReactContext.getCurrentActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
           }
 
           mVideoView.setBackgroundColor(Color.BLACK);
@@ -688,6 +689,7 @@ public class RNCWebViewManager extends SimpleViewManager<WebView> {
 
           if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             mReactContext.getCurrentActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+            mReactContext.getCurrentActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
           }
           mReactContext.getCurrentActivity().setRequestedOrientation(initialRequestedOrientation);
 
